@@ -1,0 +1,19 @@
+{
+  "name": "quotes",
+  "version": "1.0.0",
+  "description": "Full-text search with Node.js and Elasticsearch on Docker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mike-evlantev/Quotes.git"
+  },
+  "author": "Mike Evlantev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mike-evlantev/Quotes/issues"
+  },
+  "homepage": "https://github.com/mike-evlantev/Quotes#readme"
+}
