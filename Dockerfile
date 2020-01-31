@@ -3,7 +3,7 @@ FROM node:10.15.3-alpine
 
 # Working directory where package.json and package-lock.json live
 # WORKDIR /usr/src/app
-WORKDIR /app
+WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install dependencies
