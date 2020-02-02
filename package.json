@@ -2,9 +2,11 @@
   "name": "quotes",
   "version": "1.0.0",
   "description": "Full-text search with Node.js and Elasticsearch on Docker",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "pm2-runtime start node server --name node_app",
+    "stop": "pm2-runtime stop node_app",
+    "dev": "node server"
   },
   "repository": {
     "type": "git",
