@@ -1,26 +1,23 @@
 const express = require("express");
 const cors = require("cors");
+const connectEsAsync = require("./config/elasticDb");
+const quotes = require("./routes/quotes");
 require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
-/**
- * @function start
- * @returns {void}
- * @description Starts the HTTP Express server.
- */
+// Body parser
+app.use(express.json());
 
-function start() {
-  return app
-    .use(cors())
-    .use("/quotes", routes)
-    .use((_req, res) =>
-      res.status(404).json({ success: false, error: "Route not found" })
-    )
-    .listen(port, () => console.log(`Server running on port ${port}`));
-}
+// Security
+app.use(cors());
 
-module.exports = {
-  start
-};
+// Routing
+app.use("/quotes", quotes);
+
+// Db
+connectEsAsync();
+
+// Server
+app.listen(PORT, console.log(`Server running on port ${PORT}`));
